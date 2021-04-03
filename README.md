@@ -8,6 +8,7 @@ bash CentOSNET.sh -c 6.8 -v 64 -a --mirror 'http://mirrors.aliyun.com/centos-vau
 默认用户：root 密码：Vicer
 <br />
 更新源：
+<br />
 wget https://raw.githubusercontent.com/279192434/linux/main/yum-update.sh && chmod 777 yum-update.sh
 <br />
 bash yum-update.sh
