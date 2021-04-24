@@ -1,0 +1,24 @@
+===================A服务器执行=================
+
+service vos3000d stop
+service mbx3000d stop
+service callserviced stop
+service mysql stop
+tar czvf vos3000-mysql.tar /var/lib/mysql/vos3000
+
+执行完会再当前目录生成 vos3000-mysql.tar
+
+
+
+===================B服务器执行=================
+
+上传A服务器生成的 vos3000-mysql.tar
+
+service vos3000d stop
+service mbx3000d stop
+service callserviced stop
+service mysql stop
+rm -rf /var/lib/mysql/vos3000
+tar zxvf vos3000-mysql.tar -C /
+
+执行完重启服务器即可
