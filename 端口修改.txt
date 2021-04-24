@@ -1,0 +1,11 @@
+注册端口  5060  SS_SIP_PORT="5060,6060"    改的时候  必须是两个端口号
+netstat -lntup  查看端口开启状态
+
+vos客户端端口是1202
+
+#修改sip端口
+sed -i 's/SS_SIP_PORT="5060,6060"/SS_SIP_PORT="55500,65500"/g' /home/kunshi/mbx3000/etc/softswitch.conf
+#修改查费端口
+sed -i 's/port="8080"/port="8888"/g' /home/kunshiweb/base/apache-tomcat/conf/server.xml
+
+端口修改后重启才生效
