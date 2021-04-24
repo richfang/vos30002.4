@@ -1,0 +1,36 @@
+﻿查看当前的防火墙设置
+iptables -L INPUT -n --line-numbers
+
+删除一条策略，例如第4行策略
+iptables -D INPUT 4
+
+在防火墙设置允许183.15.177.34这个ip访问
+/sbin/iptables  -I INPUT -s 183.15.177.34 -j ACCEPT
+允许协议端口访问
+-A INPUT -p tcp -m tcp --dport 88 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+-A INPUT -p udp -m udp --dport 2080 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 10000:49999 -j ACCEPT
+-A INPUT -p udp -m udp --dport 10000:49999 -j ACCEPT
+
+在防火墙设置阻止以下ip访问
+/sbin/iptables  -I INPUT -s 183.15.177.34 -j DROP
+/sbin/iptables  -I INPUT -s 193.123.67.66 -j DROP
+/sbin/iptables  -I INPUT -s 138.43.120.11 -j DROP
+/sbin/iptables  -I INPUT -s 143.244.57.115 -j DROP
+/sbin/iptables  -I INPUT -s 91.132.58.14 -j DROP
+/sbin/iptables  -I INPUT -s 37.49.230.129 -j DROP
+阻止一个段的ip访问
+-A INPUT -s 222.95.0.0/255.255.0.0 -j DROP
+-A INPUT -s 222.45.0.0/255.255.0.0 -j DROP
+-A INPUT -s 58.212.0.0/255.255.0.0 -j DROP
+
+-A：在尾部插入
+-I (insert)在指定链中插入一条新规则，为指明插入到第几行 
+(如：在第七行插入)
+iptables -I INPUT 7 -p tcp -m state --state NEW -m tcp --dport 81 -j ACCEPT
+
+然后保存
+service iptables save
+然后重启
+service iptables restart
