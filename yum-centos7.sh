@@ -12,8 +12,6 @@ tee /etc/yum.repos.d/CentOS-Base.repo <<-'EOF'
 name=CentOS-$releasever - Base - mirrors.aliyun.com
 failovermethod=priority
 baseurl=http://mirrors.aliyun.com/centos/$releasever/os/$basearch/
-        http://mirrors.aliyuncs.com/centos/$releasever/os/$basearch/
-        http://mirrors.cloud.aliyuncs.com/centos/$releasever/os/$basearch/
 gpgcheck=1
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7
 EOF
