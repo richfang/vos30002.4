@@ -4,8 +4,7 @@ CentOS7.*换CentOS6.8系统:
 <br />bash CentOSNET.sh -c 6.8 -v 64 -a --mirror 'http://mirrors.aliyun.com/centos-vault/'
 <br />默认用户：root 密码：Vicer
 <br />更新源：
-<br />wget https://raw.githubusercontent.com/279192434/linux/main/yum-update.sh && chmod 777 yum-update.sh
-<br />bash yum-update.sh
+<br />wget https://raw.githubusercontent.com/279192434/linux/main/yum-update.sh && chmod 777 yum-update.sh && bash yum-update.sh
 <br />下载vos30002140安装包wget https://media.githubusercontent.com/media/279192434/linux/main/vos30002140.tar.gz
 <br />解压tar xf vos30002140.tar.gz
 <br />安装内核文件
